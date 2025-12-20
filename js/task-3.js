@@ -1,10 +1,6 @@
-const input = 
-document.querySelector("#name-input");
+const inputEl = document.querySelector("#name-input");
+const spanEl = document.querySelector("#name-output");
 
-const output =
-document.querySelector("#name-output");
-
-input.addEventListener("input", () => {
-    const value = input.value.trim();
-    output.textContent = value || "Anonymous"; 
-})
+inputEl.addEventListener("input", () => {
+  spanEl.textContent = inputEl.value.trim() || "Anonymous";
+});

@@ -4,39 +4,40 @@ function getRandomHexColor() {
     .padStart(6, 0)}`;
 }
 
-const controls = document.querySelector("#controls");
-const input = document.querySelector("input");
-const createBtn = document.querySelector('button[data-create]');
-const destroyBtn = document.querySelector('button[data-destroy]');
-const boxes = document.querySelector("#boxes");
+const inputEl = document.querySelector("#controls input");
+const createEl = document.querySelector("[data-create]");
+const boxesEl = document.querySelector("#boxes");
+const destroyEl = document.querySelector("[data-destroy]");
 
-function createBoxes(amount) {
-  let boxesSizes = [];
-  let size = 30;
-  for (let i = 1; i <= amount; ++i) {
-    const divBox = document.createElement("div");
-    divBox.style.width = `${size}px`;
-    divBox.style.height = `${size}px`;
-    divBox.style.backgroundColor = getRandomHexColor();
-    boxesSizes.push(divBox);
-    size += 10;
-  }
-  boxes.innerHTML = "";
-  boxes.append(...boxesSizes);
-}
-
-function destroyBoxes(){
-  boxes.innerHTML = "";
-}
-
-createBtn.addEventListener("click",() => {
-  const amount = Number.parseInt(input.value.trim())
-  if (amount >= 1 && amount <= 100) {
-    createBoxes(amount);
-    input.value = "";
+inputEl.addEventListener("input", () => {
+  if (!(inputEl.value >= 0 && inputEl.value < 101)) {
+    inputEl.value = null;
+    return alert("Input correct number!");
   }
 });
 
-destroyBtn.addEventListener("click", destroyBoxes);
+createEl.addEventListener("click", () => {
+  destroyBoxes();
+  createBoxes(inputEl.value);
+  inputEl.value = null;
+});
 
+destroyEl.addEventListener("click", () => {
+  destroyBoxes();
+});
 
+function createBoxes(amount) {
+  let size = 30;
+  for (let i = 0; i < amount; i++) {
+    const boxEl = document.createElement("div");
+    boxEl.classList.add(`box${i + 1}`);
+    boxEl.style.backgroundColor = getRandomHexColor();
+    boxEl.style.width = `${size + i * 10}px`;
+    boxEl.style.height = `${size + i * 10}px`;
+    boxesEl.append(boxEl);
+  }
+}
+
+function destroyBoxes() {
+  boxesEl.innerHTML = "";
+}

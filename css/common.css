@@ -4,233 +4,273 @@
 
 body {
   margin: 16px;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
-    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #fafafa;
   color: #212121;
   line-height: 1.5;
 }
-/* -------------------------default-------------------------------- */
 
-img {
-  display: block;
-  max-width: 100%;
-  height: auto;
+/* ----------------------default------------------------ */
+
+/* ----------------------end default-------------------- */
+/* ----------------------task 1------------------------- */
+p {
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-/* ------------------------end default----------------------------- */
-/* --------------------------task1--------------------------------- */
-#categories {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-  border-radius: 8px;
-  padding: 24px;
-  margin: 0 auto;
-  max-width: 440px;
   list-style-type: none;
-  background-color: #fff;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 0;
 }
 
-.item > h2 {
+#categories {
+  width: 392px;
+  color: #2e2f42;
+  padding: 24px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#categories h2 {
+  margin-top: 0;
+  margin-bottom: 16px;
+  font-family: "Montserrat", sans-serif;
   font-weight: 600;
   font-size: 24px;
-  line-height: 1.33;
+  line-height: 1.33333;
   letter-spacing: 0.04em;
-  color: #2e2f42;
-  margin-bottom: 16px;
-  margin-top: 16px;
-}
-
-#categories > .item {
-  border-radius: 8px;
-  padding: 16px;
-  background: #f6f6fe;
-}
-
-.item ul {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
 }
 
 .item li {
-  padding: 8px 16px;
-  border-radius: 4px;
+  border-radius: 8px;
   border: 1px solid #808080;
+  border-radius: 4px;
+  padding-left: 16px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  font-weight: 400;
+  font-size: 16px;
   line-height: 1.5;
+  margin-bottom: 8px;
 }
 
-/* ------------------------end task1------------------------------- */
-/* --------------------------task2--------------------------------- */
+.item ul li:last-child {
+  margin-bottom: 0;
+}
+
+.item {
+  padding: 16px;
+  margin-bottom: 24px;
+  background-color: #f6f6fe;
+  border-radius: 8px;
+  width: 392px;
+}
+/* ----------------------end task 1--------------------- */
+/* ------------------------task 2----------------------- */
+
+img {
+  display: block;
+}
 
 .gallery {
+  padding-top: 100px;
+  padding-bottom: 100px;
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
-  gap: 48px 24px;
-  max-width: 1440px;
-  margin: 0 auto;
+  flex-direction: row;
+  flex-wrap: wrap;
+  row-gap: 48px;
+  column-gap: 24px;
 }
 
-.gallery img {
+.gallery-image {
   max-width: 360px;
   height: 300px;
   object-fit: cover;
 }
-/* -------------------end task2----------------------------------- */
-/* -----------------------task3----------------------------------- */
-#name-input {
-  border: 1px solid #808080;
-  border-radius: 4px;
-  min-width: 360px;
-  padding: 8px 16px;
-  line-height: 1.5;
-}
-/* -------------------end task3----------------------------------- */
-/* -----------------------task4----------------------------------- */
-.login-form {
-  margin: 0 auto;
-  background-color: #fff;
-  border-radius: 8px;
-  padding: 24px;
-  max-width: 408px;
-}
+/* ----------------------end task 2--------------------- */
+/* -----------------------task 3------------------------ */
 
-.login-form input {
+#name-input {
   display: block;
-  width: 100%;
-  border-radius: 4px;
-  border: 1px solid #808080;
-  padding: 8px 16px;
+  border: 1px solid #2e2f42;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
   line-height: 1.5;
   letter-spacing: 0.04em;
   color: #2e2f42;
-}
-
-.login-form label {
-  display: block;
-  margin-bottom: 8px;
-}
-
-.login-form button {
-  display: block;
-  margin-top: 16px;
-  width: 86px;
-  padding: 8px 16px;
-  background-color: #4e75ff;
-  color: #fff;
-  font-weight: 500;
-  border: none;
+  width: 360px;
+  height: 40px;
   border-radius: 8px;
-  cursor: pointer;
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.login-form button:hover,
-.login-form button:focus {
-  background-color: #6c8cff;
-}
-/* -------------------end task4----------------------------------- */
-/* -----------------------task5----------------------------------- */
-.widget {
-  max-width: 392px;
-  margin: 0 auto;
-  padding: 24px;
-  border-radius: 8px;
-  background-color: #fff;
-}
-
-.widget > p{
-  display: block;
-  margin-left: 88px;
-}
-
-.widget button{
-  display: block;
-  margin-top: 16px;
+  padding-left: 16px;
   margin-left: auto;
   margin-right: auto;
-  min-width: 148px;
-  background-color: #4e75ff;
-  color: #fff;
-  font-weight: 500;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  padding: 8px 16px;
-}
-
-.widget button:hover,
-.widget button:focus {
-  background-color: #6c8cff;
-}
-/* -------------------end task5----------------------------------- */
-/* -----------------------task6----------------------------------- */
-#controls {
-  background-color: #f6f6fe;
-  padding: 32px;
-  display: flex;
-  gap: 16px;
-  border-radius: 8px;
+  margin-top: 24px;
   margin-bottom: 16px;
 }
 
-#controls input {
-  min-width: 150px;
-  border-radius: 4px;
-  border: 1px solid #808080;
-  padding: 8px;
-  text-align: center;
-  line-height: 1.5;
+h1 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 1.33333;
+  letter-spacing: 0.04em;
   color: #2e2f42;
-  letter-spacing: 0.04em;
+  text-align: center;
 }
-#controls button {
-  border: none;
-  min-width: 120px;
-  padding-block: 8px;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  color: #fff;
-  font-weight: 500;
+
+/* ----------------------end task 3--------------------- */
+/* ------------------------task 4----------------------- */
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+  width: 408px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.login-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
   line-height: 1.5;
   letter-spacing: 0.04em;
+  color: #2e2f42;
+  margin-bottom: 8px;
+}
+
+.login-form input {
+  border: 1px solid #808080;
+  border-radius: 4px;
+  width: 360px;
+  height: 40px;
+  padding-left: 16px;
+}
+
+.login-form label:last-of-type {
+  margin-bottom: 16px;
+}
+
+.login-form button {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  color: #ffffff;
+  border-radius: 8px;
+  padding: 8px 16px;
+  width: 86px;
+  height: 40px;
+  background-color: #4e75ff;
+  border: none;
+}
+/* ----------------------end task 4--------------------- */
+/* ---------------------- task 5 ----------------------- */
+
+.widget {
+  margin-top: 100px;
+  width: 260px;
+  padding: 10px;
+  padding-bottom: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+
+  background-color: #ffffff;
+}
+
+.widget p {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  color: #2e2f42;
+}
+
+.change-color {
+  font-weight: 500;
+  font-size: 16px;
+  color: #ffffff;
+  background-color: #4e75ff;
+  border-radius: 8px;
+  padding: 8px 16px;
+  width: 148px;
+  height: 40px;
+  border: none;
+}
+/* ----------------------end task 5--------------------- */
+/* -----------------------task 6------------------------ */
+#controls {
+  display: flex;
+  flex-direction: raw;
+  border-radius: 8px;
+  padding: 32px;
+  width: 486px;
+  padding: 32px;
+  gap: 16px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #f6f6fe;
+}
+
+#controls input {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  color: #2e2f42;
+  border: 1px solid #808080;
+  border-radius: 8px;
+  padding-left: 72px;
+  width: 150px;
+  height: 40px;
+}
+
+#controls button {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  color: #ffffff;
+  background-color: #4e75ff;
+  border-radius: 8px;
+  padding-block: 8px;
+  padding-inline: 16px;
+  width: 120px;
+  height: 40px;
+  border: none;
+}
+
+#controls button:last-child {
+  background: #ff4e4e;
 }
 
 #boxes {
-  background-color: #f6f6fe;
-  border-radius: 8px;
-  padding: 32px;
   display: flex;
+  flex-direction: row;
   flex-wrap: wrap;
-  gap: 16px;
+  gap: 44px;
 }
 
-button[data-create] {
-  background-color: #4e75ff;
-}
-
-button[data-destroy] {
-  background-color: #ff4e4e;
-}
-
-button[data-create]:hover,
-button[data-create]:focus {
-  background-color: #6c8cff;
-}
-
-button[data-destroy]:hover,
-button[data-destroy]:focus {
-  background-color: #ff6b6b;
-}
-/* -------------------end task6----------------------------------- */
+/* ----------------------end task 6--------------------- */
