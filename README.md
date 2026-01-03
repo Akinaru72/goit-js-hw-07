@@ -1,11 +1,56 @@
-# Домашнє завдання №7 `goit-js-hw-07`
+# Homework №7
+
+Before starting the homework, make sure to watch this video: [https://www.youtube.com/watch?v=bzReZsR_yBY](https://www.youtube.com/watch?v=bzReZsR_yBY)
+
+After making changes to your repository, please wait 5 minutes before submitting your work for review. GitHub needs time to update the version.
+
+## Self-check — at this point, you should understand:
+
+- what the Document Object Model (DOM) is and how the hierarchy of DOM elements is built
+- the main properties and attributes of DOM elements
+- how to manipulate the DOM tree by creating and removing elements
+- the essence and functionality of browser events
+- how to handle events using `addEventListener()` and `removeEventListener()`
+- how to use form element events
+
+It's time to practice and consolidate this knowledge!
+
+---
+
+## Instructions
+
+1. Create a repository **`goit-js-hw-07`**
+2. Read each task and complete it in your code editor
+3. Tasks must be completed exactly according to the specifications (do not change the initial HTML)
+4. There should be no errors or warnings in the console when opening the live page
+5. Make sure the code is formatted using **Prettier**
+6. Submit your homework for review
+
+**Submission format:**  
+The homework should include two links:
+
+- to the source files
+- to the live page on **GitHub Pages**
+
+---
+
+## Starter files
+
+Download the starter files with ready markup and linked scripts for each task. Copy them into your project.
+
+> Important: the starter files are in the `src` folder.  
+> For GitHub Pages, the `index.html` file must be in the project root, so copy **only the contents of the `src` folder**, the `src` folder itself is not needed.
+
+Use this template for styling your task markup.
 
 > [!NONES] Для стилізації розмітки твоїх завдань використовуй цей
 > [макет](https://www.figma.com/file/m8k9NQV7qZrtYDCvxfD68B/%D0%94%D0%97-JavaScript?type=design&node-id=0-1&mode=design&t=hVhPAcFeZ24V6Z6V-0).
 
-## Завдання 1
+---
 
-HTML містить список категорій `ul#categories`.
+## Task 1
+
+The HTML contains a list of categories `ul#categories`:
 
 ```html
 <ul id="categories">
@@ -39,42 +84,33 @@ HTML містить список категорій `ul#categories`.
 </ul>
 ```
 
-З використанням властивостей і методів `DOM`-елементів, напиши скрипт, який:
+Using the properties and methods of `DOM` elements, write a script that:
 
-1. Порахує й виведе в консоль кількість категорій в `ul#categories`, тобто
-   елементів `li.item`.
-2. Для кожного елемента `li.item` у списку `ul#categories` знайде й виведе в
-   консоль текст заголовка елемента (тегу `<h2>`) і кількість елементів у
-   категорії (усіх `<li>`, вкладених у нього).
+1. Counts and logs to the console the number of categories in `ul#categories`, i.e., the number of `li.item` elements.
+2. For each `li.item` in the `ul#categories` list, finds and logs to the console the text of the element’s heading (`<h2>`) and the number of items in that category (all `<li>` elements nested inside it).
 
-#### На що буде звертати увагу ментор при перевірці:
+#### What the mentor will pay attention to during the review:
 
-- Кількість категорій, їх назва та кількість елементів отримані за допомогою
-  властивостей і методів `DOM`-елементів
-- Дані за кожною категорією були отримані й виведені в консоль у тілі циклу або
-  методу `forEach()`
-- У консолі має бути виведено наступне повідомлення:
+- The number of categories, their names, and the number of items are obtained using `DOM` element properties and methods.
+- The data for each category is obtained and logged to the console inside a loop or using the `forEach()` method.
+- The console should display the following output:
 
-![Alt text](image.png)
+![Alt text](./assets/goit-js-07.jpg)
 
-## Завдання 2
+## Task 2
 
-Напиши скрипт для створення галереї зображень на основі масиву даних. `HTML`
-містить список `ul.gallery`.
+Write a script to create an image gallery based on an array of data. The `HTML` contains a list `ul.gallery`:
 
 ```html
 <ul class="gallery"></ul>
 ```
 
-Використовуй масив об'єктів images для створення елементів `<img>`, вкладених в
-`<li>`.
+Use the `images` array of objects to create `<img>` elements nested inside `<li>` elements.
 
-Ти можеш створити й додати `HTML`-елементи, використовуючи
-`document.createElement()` і `elem.append()` або шаблонні рядки і
-`elem.insertAdjacentHTML()`.
+You can create and append HTML elements using `document.createElement()` and `elem.append()`, or template strings and `elem.insertAdjacentHTML()`.
 
-- Усі елементи галереї повинні додаватися в `DOM` за одну операцію додавання.
-- Додай мінімальне оформлення галереї флексбоксами через `CSS` класи.
+- All gallery elements should be added to the `DOM` in a single insertion operation.
+- Add minimal styling to the gallery using Flexbox through CSS classes.
 
 ```js
 const images = [
@@ -105,40 +141,33 @@ const images = [
 ];
 ```
 
-#### На що буде звертати увагу ментор при перевірці:
+#### What the mentor will pay attention to during the review:
 
-- Створена й додана в `DOM` галерея із шести зображень
-- Галерея додана у список `ul.gallery` і являє собою 6 елементів `<li>`, в які
-  вкладені елементи `<img>`
-- Для створення елементів `<img>` використані дані з масиву об’єктів `images`
-- Усі елементи галереї додані в `DOM` за одну операцію додавання
-- Є мінімальне оформлення галереї флексбоксами через `CSS` класи
+- A gallery of six images has been created and added to the `DOM`
+- The gallery is added to the `ul.gallery` list and consists of 6 `<li>` elements, each containing an `<img>` element
+- The `<img>` elements are created using data from the `images` array of objects
+- All gallery elements are added to the `DOM` in a single insertion operation
+- Minimal styling of the gallery using Flexbox through CSS classes is applied
 
-## Завдання 3
+## Task 3
 
-Напиши скрипт, який під час набору тексту в інпуті `input#name-input` (подія
-`input`) підставляє його поточне значення в `span#name-output` як ім’я для
-привітання. Обов’язково очищай значення в інпуті по краях від пробілів . Якщо
-інпут порожній або містить лише пробіли, то замість імені у спан має
-підставлятися рядок `"Anonymous"`.
+Write a script that, while typing in the `input#name-input` field (on the `input` event), sets its current value into the `span#name-output` as the name for the greeting. Make sure to trim whitespace from the input value. If the input is empty or contains only spaces, the span should display `"Anonymous"` instead of a name.
 
 ```html
 <input type="text" id="name-input" placeholder="Please enter your name" />
 <h1>Hello, <span id="name-output">Anonymous</span>!</h1>
 ```
 
-#### На що буде звертати увагу ментор при перевірці:
+#### What the mentor will pay attention to during the review:
 
-- На елементі `input#name-input` прослуховується подія `input`
-- Під час набору тексту в інпуті його поточне значення підставляється в
-  `span#name-output` як ім’я для привітання
-- Значення в інпуті очищене від пробілів по краях
-- Якщо інпут порожній або містить лише пробіли, то замість імені у спан має
-  підставлятися рядок `"Anonymous"`
+- The `input#name-input` element has an `input` event listener
+- While typing in the input, its current value is inserted into `span#name-output` as the greeting name
+- The input value is trimmed of whitespace at the edges
+- If the input is empty or contains only spaces, the span displays `"Anonymous"` instead of a name
 
-## Завдання 4
+## Task 4
 
-Напиши скрипт управління формою логіна.
+Write a script to handle the login form.
 
 ```html
 <form class="login-form">
@@ -154,34 +183,23 @@ const images = [
 </form>
 ```
 
-1. Обробка відправлення форми `form.login-form` повинна відбуватися за подією
-   `submit`.
-2. Під час відправлення форми сторінка не повинна перезавантажуватися.
-3. Якщо при сабміті у формі є незаповнені поля, виводь `alert` з попередженням
-   про те, що `'All form fields must be filled in'`. Не додавай на інпути
-   атрибут `required`, валідація має відбуватися саме через `JS`.
-4. Якщо користувач заповнив усі поля і відправив форму, збери значення полів в
-   об'єкт з двома властивостями, де ключ — це ім'я інпутів, а значення —
-   відповідні значення цих інпутів, очищені від пробілів по краях. Для доступу
-   до елементів форми використовуй властивість `elements`.
-5. При сабміті форми виведи об'єкт із введеними даними в консоль і очисти
-   значення полів форми методом `reset`.
+1. The submission of the `form.login-form` should be handled via the `submit` event.
+2. When the form is submitted, the page must **not reload**.
+3. If there are any empty fields during submission, display an `alert` with the message `'All form fields must be filled in'`. Do **not** add the `required` attribute to the inputs; validation must be done via JS.
+4. If all fields are filled and the form is submitted, collect the values of the inputs into an object with two properties, where the key is the input's name and the value is the input’s value trimmed of whitespace. Use the form’s `elements` property to access the inputs.
+5. On form submission, log the object with the input data to the console and clear the form fields using the `reset` method.
 
-На що буде звертати увагу ментор при перевірці:
+#### What the mentor will pay attention to during the review:
 
-- Прослуховується подія `submit`
-- Під час відправлення форми сторінка не перезавантажується
-- Якщо при сабміті у формі є незаповнені поля, виводиться `alert`
-- При сабміті в консоль виводиться об’єкт з двома властивостями, де ключі — це
-  ім’я інпутів, а значення — відповідні значення цих інпутів, очищені від
-  пробілів по краях
-- Після сабміту елементи форми очищаються
+- The `submit` event is being listened to
+- The page does not reload on form submission
+- An `alert` is displayed if any fields are empty on submit
+- On submit, the console logs an object with two properties, where keys are the input names and values are the corresponding input values, trimmed of whitespace
+- After submission, the form fields are cleared
 
-## Завдання 5
+## Task 5
 
-Напиши скрипт, який змінює колір фону елемента `<body>` через інлайн-стиль по
-кліку на `button.change-color` і задає це значення кольору текстовим вмістом для
-`span.color`.
+Write a script that changes the `<body>` background color via inline style when clicking the `button.change-color` and sets this color value as the text content of `span.color`.
 
 ```html
 <div class="widget">
@@ -190,7 +208,7 @@ const images = [
 </div>
 ```
 
-Для генерування випадкового кольору використовуй функцію `getRandomHexColor()`.
+To generate a random color, use the function `getRandomHexColor()`.
 
 ```js
 function getRandomHexColor() {
@@ -200,26 +218,19 @@ function getRandomHexColor() {
 }
 ```
 
-Зверни увагу, що функція `getRandomHexColor()` повертає колір у `hex`-форматі, в
-той час як колір фону на `<body>` буде у форматі `rgb`. Це нормально й не
-потребує якихось правок.
+Note that the function `getRandomHexColor()` returns a color in `hex` format, while the `<body>` background color will be in `rgb` format. This is normal and does not require any changes.
 
-#### На що буде звертати увагу ментор при перевірці:
+#### What the mentor will pay attention to during review:
 
-- Фон на `<body>` задається тільки після кліку на `button.change-color`
-- При кожному кліку на елемент `button.change-color` фон `<body>` зафарбовується
-  новим рандомним кольором
-- На `<body>` і `span.color` значення одного й того самого кольору
+- The `<body>` background is set only after clicking the `button.change-color`
+- Each click on the `button.change-color` element changes the `<body>` background to a new random color
+- The `<body>` and `span.color` have the same color value
 
-## Завдання 6
+## Task 6
 
-Напиши скрипт створення й очищення колекції елементів з наступним функціоналом.
+Write a script for creating and clearing a collection of elements with the following functionality.
 
-Є `input`, у який користувач вводить бажану кількість елементів. Після
-натискання на кнопку `Create` має рендеритися (додаватися в `DOM`) колекція з
-відповідною кількістю елементів і очищатися значення в інпуті. При повторному
-натисканні на кнопку `Create` поверх старої колекції має рендеритись нова. Після
-натискання на кнопку `Destroy` колекція елементів має очищатися.
+There is an `input` where the user enters the desired number of elements. After clicking the `Create` button, a collection with the corresponding number of elements should be rendered (added to the `DOM`), and the input value should be cleared. On repeated clicks of the `Create` button, the new collection should replace the old one. After clicking the `Destroy` button, the collection of elements should be cleared.
 
 ```html
 <div id="controls">
@@ -231,20 +242,13 @@ function getRandomHexColor() {
 <div id="boxes"></div>
 ```
 
-Після натискання користувачем на кнопку `Create` треба провалідувати значення в
-`input`, воно має бути в межах від `1` до `100` включно. Тільки якщо воно
-задоволяє умову, мають додаватися нові `<div>` елементи в `DOM`.
+After the user clicks the `Create` button, the value in the `input` must be validated. It should be within the range from `1` to `100` inclusive. Only if it meets this condition should new `<div>` elements be added to the `DOM`.
 
-Для рендеру елементів на сторінці створи функцію `createBoxes(amount)`, яка
-приймає один параметр — число, що зберігає кількість елементів для рендеру.
-Функція має створювати стільки `<div>` елементів, скільки вказано в параметрі
-`amount` і додавати їх у `DOM` дочірніми елементами для `div#boxes`.
+To render the elements on the page, create a function `createBoxes(amount)` that takes one parameter — a number representing how many elements to render. The function should create as many `<div>` elements as specified by the `amount` parameter and add them to the `DOM` as children of `div#boxes`.
 
-1. Розміри першого `<div>` елемента мають бути `30px` на `30px`.
-2. Кожен наступний елемент повинен бути ширшим і вищим від попереднього на
-   `10px`.
-3. Усі елементи повинні мати випадковий колір фону. Використовуй готову функцію
-   `getRandomHexColor()` для отримання випадкового кольору.
+1. The size of the first `<div>` element should be `30px` by `30px`.
+2. Each subsequent element should be 10px wider and taller than the previous one.
+3. All elements should have a random background color. Use the provided function `getRandomHexColor()` to generate a random color.
 
 ```js
 function getRandomHexColor() {
@@ -254,20 +258,17 @@ function getRandomHexColor() {
 }
 ```
 
-Для очищення колекції після натискання на кнопку `Destroy` створи функцію
-`destroyBoxes()`, яка очищає вміст `div#boxes`, у такий спосіб видаляючи всі
-створені елементи.
+To clear the collection after clicking the `Destroy` button, create a function `destroyBoxes()` that clears the contents of `div#boxes`, thereby removing all created elements.
 
-#### На що буде звертати увагу ментор при перевірці:
+#### What the mentor will pay attention to during the review:
 
-- Після кліку на кнопку `Create`, якщо в `input` значення поза межами діапазо
-- Після кліку на кнопку `Create` в `div#boxes` додається така кількість
-  різнокольорових квадратів, яка вказана в `input`. Значення `input` очищається
-- Після повторного кліку на кнопку `Create` попередні квадрати повністю
-  прибираються і замість них додаються нові у кількості, що вказана в `input`.
-  Значення `input` очищається
-- Усі квадрати в `div#boxes` різнокольорові і мають фон випадкового кольору
-- Перший квадрат у `div#boxes` має розміри `30px` на `30px`, а кожен наступний
-  на `10px` вищий і ширший від попереднього
-- Після натискання на кнопку `Destroy` усі квадрати з `div#boxes` мають
-  видалятися
+- After clicking the `Create` button, if the value in the `input` is out of range, nothing happens.
+- After clicking the `Create` button, `div#boxes` contains as many colorful squares as specified in the `input`. The `input` value is cleared.
+- On a repeated click of the `Create` button, the previous squares are completely removed, and new squares are added according to the new `input` value. The `input` value is cleared.
+- All squares in `div#boxes` are colorful and have a random background color.
+- The first square in `div#boxes` has dimensions `30px` by `30px`, and each subsequent square is `10px` taller and wider than the previous one.
+- After clicking the `Destroy` button, all squares in `div#boxes` are removed.
+
+---
+
+**Live page: [GitHub Pages](https://akinaru72.github.io/goit-js-hw-06/)**
